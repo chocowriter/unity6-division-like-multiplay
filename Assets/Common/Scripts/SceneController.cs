@@ -1,25 +1,58 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using WanzyeeStudio;
 
 namespace DivisionLike
 {
     public enum SceneName
     {
         MainMenu,
-        SinglePlay,
-        MultiPlay,
-        Training,
+        SinglePlayer,
+        MultiPlayer,
         Settings
     }
     
-    public class SceneController : MonoBehaviour
+    /// <summary> 씬을 불러들이고 관리한다. </summary>
+    public class SceneController : BaseSingleton<SceneController>
     {
-        private void Awake()
+        /// <summary> 현재 실행 중인 씬의 이름 </summary>
+        [SerializeField] private SceneName m_CurrentSceneName = SceneName.MainMenu;
+
+        public SceneName CurrentScene
         {
-            
+            get { return m_CurrentSceneName; }
+            set { m_CurrentSceneName = value; }
+        }
+        /// <summary> 현재 활성화된 씬의 이름을 반환한다. </summary>
+        /// <returns></returns>
+        public string GetActiveScene()
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            return scene.name;
+        }
+
+        /// <summary> 지정된 이름을 가진 씬을 불러들인다. </summary>
+        /// <param name="name"></param>
+        public void LoadScene(SceneName name)
+        {
+            m_CurrentSceneName = name;
+            SceneManager.LoadScene(m_CurrentSceneName.ToString(), LoadSceneMode.Single);
+        }
+
+        /// <summary> 지정된 이름을 가진 씬을 불러들인다. </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public AsyncOperation LoadSceneAsyn(SceneName name)
+        {
+            m_CurrentSceneName = name;
+            return SceneManager.LoadSceneAsync(m_CurrentSceneName.ToString());
+        }
+
+        /// <summary> 불러온 씬이 이미 있는데 추가적으로 더 불러들이는 씬이 있다. </summary>
+        /// <param name="name"></param>
+        public void LoadSceneAddictive(SceneName name)
+        {
+            SceneManager.LoadScene(name.ToString(), LoadSceneMode.Additive);
         }
     }
 }
-
-
