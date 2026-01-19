@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DivisionLike
 {
@@ -7,12 +9,16 @@ namespace DivisionLike
         MainMenu,
         SinglePlay,
         MultiPlay,
-        Training
+        Training,
+        Settings
     }
     
     public class SceneController : MonoBehaviour
     {
-        
+        private void Awake()
+        {
+            
+        }
     }
 }
 
