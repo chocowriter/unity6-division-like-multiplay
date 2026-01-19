@@ -9,6 +9,7 @@ namespace DivisionLike
         MainMenu,
         SinglePlayer,
         MultiPlayer,
+        Training,
         Settings
     }
     
