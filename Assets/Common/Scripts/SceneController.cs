@@ -7,8 +7,8 @@ namespace DivisionLike
     public enum SceneName
     {
         MainMenu,
-        SinglePlayer,
-        MultiPlayer,
+        SinglePlay,
+        MultiPlay,
         Training,
         Settings
     }

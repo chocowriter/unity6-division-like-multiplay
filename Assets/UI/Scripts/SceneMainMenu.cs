@@ -78,7 +78,7 @@ namespace DivisionLike
 
             SceneManager.sceneLoaded += LoadedSceneComplete;
 
-            StartCoroutine(LoadScene(SceneName.SinglePlayer));
+            StartCoroutine(LoadScene(SceneName.SinglePlay));
         }
 
         IEnumerator LoadScene(SceneName _scene)
