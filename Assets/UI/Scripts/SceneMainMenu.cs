@@ -5,13 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 namespace DivisionLike
 {
-    /// <summary>
-    /// 인트로 화면 GUI
-    /// </summary>
-    public class SceneMain : MonoBehaviour
+    public class SceneMainMenu : MonoBehaviour
     {
         [SerializeField] private Button m_SinglePlayButton;
         [SerializeField] private Button m_MultiPlayButton;
@@ -21,8 +17,6 @@ namespace DivisionLike
         [SerializeField] private Button m_QuitButton;
         
         [SerializeField] private GameObject m_LoadingScreen;
-
-        #region MonoBehaviour
 
         private void Awake()
         {
@@ -34,11 +28,9 @@ namespace DivisionLike
             m_QuitButton.onClick.AddListener(OnClickQuitButton);
         }
 
-        #endregion
-
         private void OnClickSinglePlayButton()
         {
-            LoadPlayScene();
+            LoadSinglePlayScene();
         }
 
         private bool IsDirectoryEmpty(string path)
@@ -48,20 +40,26 @@ namespace DivisionLike
 
         private void OnClickMultiButton()
         {
+            LoadMultiPlayScene();
         }
 
         private void OnClickTrainingButton()
         {
-            SceneController.instance.LoadScene(SceneName.Training);
+            m_LoadingScreen.SetActive(true);
+            SceneManager.sceneLoaded += LoadedSceneComplete;
+            StartCoroutine(LoadScene(SceneName.Training));
         }
 
         private void OnClickSettingsButton()
         {
+            m_LoadingScreen.SetActive(true);
+            SceneManager.sceneLoaded += LoadedSceneComplete;
+            StartCoroutine(LoadScene(SceneName.Settings));
         }
 
         private void OnClickGithubButton()
         {
-            Application.OpenURL("https://github.com/chocowriter/unity6-divison-like-hdrp");
+            Application.OpenURL("https://github.com/chocowriter/unity6-division-like-multiplay");
         }
 
         private void OnClickQuitButton()
@@ -69,16 +67,18 @@ namespace DivisionLike
             Application.Quit();
         }
 
-        /// <summary>
-        /// 플레이 씬을 불러들인다.
-        /// </summary>
-        public void LoadPlayScene()
+        public void LoadSinglePlayScene()
         {
             m_LoadingScreen.SetActive(true);
-
             SceneManager.sceneLoaded += LoadedSceneComplete;
-
             StartCoroutine(LoadScene(SceneName.SinglePlay));
+        }
+
+        public void LoadMultiPlayScene()
+        {
+            m_LoadingScreen.SetActive(false);
+            SceneManager.sceneLoaded += LoadedSceneComplete;
+            StartCoroutine(LoadScene(SceneName.MultiPlay));
         }
 
         IEnumerator LoadScene(SceneName _scene)
