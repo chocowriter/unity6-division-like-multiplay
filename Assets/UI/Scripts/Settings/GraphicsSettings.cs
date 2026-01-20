@@ -11,16 +11,18 @@ namespace DivisionLike
             Low = 0,
             Medium,
             High,
-            Ultra,
-            Custom
+            Ultra
         }
         
-        public EQuality quality = EQuality.High;
+        public EQuality graphicQuality = EQuality.High;
         [Range(0, 20)] public int brightness = 10;
         [Range(0, 20)] public int contrast = 10;
         public bool vSync = true;
         public bool frameRateLimit = false;
         [Range(20, 200)] public int customFrameRate = 60;
-        public 
+        public EQuality shadowQuality = EQuality.High;
+        public EQuality particleDetail = EQuality.High;
+        public EQuality volumeDetail = EQuality.High;
+        
     }
 }
