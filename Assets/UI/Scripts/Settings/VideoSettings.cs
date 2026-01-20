@@ -36,8 +36,6 @@ namespace DivisionLike
             R75
         }
         
-        
-        
         public EWindowedMode windowedMode = EWindowedMode.FullScreen;
         public EResolution resolution = EResolution.X1024x768;
         public ERefreshRate refreshRate = ERefreshRate.R60;
