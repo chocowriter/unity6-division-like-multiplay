@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace DivisionLike
 {
-    [Serializable]
-    public class GraphicsSettings
+    [CreateAssetMenu(fileName = "GraphicSettingsSO", menuName = "Settings/Graphic Settings", order = int.MaxValue)]
+    public class GraphicsSettings : ScriptableObject
     {
         public enum EQuality
         {

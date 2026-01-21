@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace DivisionLike
 {
-    [Serializable]
-    public class VideoSettings
+    [CreateAssetMenu(fileName = "VideoSettingsSO", menuName = "Settings/Video Settings", order = int.MaxValue)]
+    public class VideoSettings : ScriptableObject
     {
         public enum EWindowedMode
         {

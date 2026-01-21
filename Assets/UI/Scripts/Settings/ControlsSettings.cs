@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace DivisionLike
 {
-    [Serializable]
-    public class ControlsSettings
+    [CreateAssetMenu(fileName = "ControlSettingsSO", menuName = "Settings/Control Settings", order = int.MaxValue)]
+    public class ControlsSettings : ScriptableObject
     {
         [Range(0, 100)]public int mouseSensivity = 10;
         [Range(0, 100)] public int mouseAimSensivity = 30;
