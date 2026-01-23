@@ -4,6 +4,9 @@ using TMPro;
 
 namespace DivisionLike
 {
+    /// <summary>
+    /// 툴팁
+    /// </summary>
     public class TooltipController : MonoBehaviour
     {
         public enum TextAlign

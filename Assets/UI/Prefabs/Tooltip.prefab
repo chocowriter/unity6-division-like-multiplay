@@ -214,7 +214,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 7111340749674034630}
   - component: {fileID: 7111340749674033723}
   - component: {fileID: 7111340749674033720}
-  - component: {fileID: 7111340749674033721}
+  - component: {fileID: 1157577806844696607}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -132.84998}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 316, y: 132.85}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &7111340749674033723
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7111340749674033721
+--- !u!114 &1157577806844696607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,6 +603,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7111340749674034631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da80d70c1b0deda48b8042c00d50f3e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c31ab98bfff05c46899e64d76c61685, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DivisionLike.TooltipController
