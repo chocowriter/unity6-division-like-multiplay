@@ -17,26 +17,28 @@ namespace DivisionLike
         private TextMeshProUGUI m_ToolTipTextLeft;
         private TextMeshProUGUI m_ToolTipTextRight;
         private TextMeshProUGUI m_ToolTipTextCenter;
-        private RectTransform rect;
-        private int showInFrames = -1;
-        private bool showNow = false;
+        private RectTransform m_Rect;
+        private int m_ShowInFrames = -1;
+        private bool m_ShowNow = false;
         
         private void Awake()
         {
-            // Load up both text layers
             var tmps = GetComponentsInChildren<TextMeshProUGUI>();
             for(int i = 0; i < tmps.Length; i++)
             {
-                if (tmps[i].name == "_left")
+                if (tmps[i].name == "Text_Left")
                     m_ToolTipTextLeft = tmps[i];
 
-                if (tmps[i].name == "_right")
+                if (tmps[i].name == "Text_Right")
                     m_ToolTipTextRight = tmps[i];
+                
+                if (tmps[i].name == "Text_Center")
+                    m_ToolTipTextCenter = tmps[i];
             }
 
             // Keep a reference for the panel image and transform
             m_Panel = GetComponent<Image>();
-            rect = GetComponent<RectTransform>();
+            m_Rect = GetComponent<RectTransform>();
 
             // Hide at the start
             HideTooltip();
@@ -61,23 +63,23 @@ namespace DivisionLike
             var margins = m_ToolTipTextLeft.margin.y * 2;
 
             // Update the height of the tooltip panel
-            rect.sizeDelta = new Vector2(rect.sizeDelta.x, biggestY + margins);
+            m_Rect.sizeDelta = new Vector2(m_Rect.sizeDelta.x, biggestY + margins);
         }
 
         private void UpdateShow()
         {
-            if (showInFrames == -1)
+            if (m_ShowInFrames == -1)
                 return;
 
-            if (showInFrames == 0)
-                showNow = true;
+            if (m_ShowInFrames == 0)
+                m_ShowNow = true;
 
-            if (showNow)
+            if (m_ShowNow == true)
             {
-                rect.anchoredPosition = Input.mousePosition;
+                m_Rect.anchoredPosition = Input.mousePosition;
             }
 
-            showInFrames -= 1;
+            m_ShowInFrames -= 1;
         }
 
         public void SetRawText(string text, TextAlign align = TextAlign.Left)
@@ -87,6 +89,9 @@ namespace DivisionLike
                 m_ToolTipTextLeft.text = text;
             if (align == TextAlign.Right)
                 m_ToolTipTextRight.text = text;
+            if (align == TextAlign.Center)
+                m_ToolTipTextCenter.text = text;
+            
             ResizeToMatchText();
         }
 
@@ -101,6 +106,8 @@ namespace DivisionLike
             m_ToolTipTextLeft.color = style.defaultColor;
             m_ToolTipTextRight.font = style.fontAsset;
             m_ToolTipTextRight.color = style.defaultColor;
+            m_ToolTipTextCenter.font = style.fontAsset;
+            m_ToolTipTextCenter.color = style.defaultColor;
 
             // Convert all tags to TMPro markup
             var styles = style.fontStyles;
@@ -118,6 +125,9 @@ namespace DivisionLike
                 m_ToolTipTextLeft.text = text;
             if (align == TextAlign.Right)
                 m_ToolTipTextRight.text = text;
+            if (align == TextAlign.Center)
+                m_ToolTipTextCenter.text = text;
+            
             ResizeToMatchText();
         }
 
@@ -133,15 +143,15 @@ namespace DivisionLike
         {
             // After 2 frames, showNow will be set to TRUE
             // after that the frame count wont matter
-            if (showInFrames == -1)
-                showInFrames = 2;
+            if (m_ShowInFrames == -1)
+                m_ShowInFrames = 2;
         }
 
         public void HideTooltip()
         {
-            showInFrames = -1;
-            showNow = false;
-            rect.anchoredPosition = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
+            m_ShowInFrames = -1;
+            m_ShowNow = false;
+            m_Rect.anchoredPosition = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
         }
     }
 }
