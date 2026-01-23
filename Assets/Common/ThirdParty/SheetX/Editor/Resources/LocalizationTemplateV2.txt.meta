@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 94b2f75e1cab812459220629d75268f6
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 300772
+  packageName: 'SheetX Pro: Manage Constants, Data & Localization with Excel & Google
+    Sheets'
+  packageVersion: 1.3.1
+  assetPath: Assets/SheetX/Editor/Resources/LocalizationTemplateV2.txt
+  uploadId: 841948
