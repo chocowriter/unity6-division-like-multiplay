@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bb3527baa3654b644b0d9d0a0fb4ccb4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255996
+  packageName: Exploding Objects
+  packageVersion: 1.1
+  assetPath: Assets/ExplosiveObjects/Particles/Materials/GlassParticle.mat
+  uploadId: 850400
