@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/UI/Scenes/AutoSignIn.unity
+    guid: 8dc807feafe5f4d4bbc5874f2a8e8fb9
+  - enabled: 1
     path: Assets/UI/Scenes/SignIn.unity
     guid: 78da575aeb364e7468fceef4d348687e
   - enabled: 1
