@@ -1,0 +1,1 @@
+﻿[{"idstring":"MainMenu_SinglePlay","en":"Single Play","ko":"싱글 플레이"},{"idstring":"MainMenu_MultiPlay","en":"Multi Play","ko":"멀티 플레이"},{"idstring":"MainMenu_Training","en":"Training","ko":"훈련소"},{"idstring":"MainMenu_Settings","en":"Settings","ko":"설정"},{"idstring":"MainMenu_GitHubLink","en":"GitHub Link","ko":"깃헙 링크"},{"idstring":"MainMenu_Quit","en":"Quit","ko":"게임 종료"}]
