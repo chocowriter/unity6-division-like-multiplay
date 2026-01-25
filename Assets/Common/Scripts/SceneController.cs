@@ -6,6 +6,7 @@ namespace DivisionLike
 {
     public enum SceneName
     {
+        SignIn = 0,
         MainMenu,
         SinglePlay,
         MultiPlay,
@@ -17,7 +18,7 @@ namespace DivisionLike
     public class SceneController : BaseSingleton<SceneController>
     {
         /// <summary> 현재 실행 중인 씬의 이름 </summary>
-        [SerializeField] private SceneName m_CurrentSceneName = SceneName.MainMenu;
+        [SerializeField] private SceneName m_CurrentSceneName = SceneName.SignIn;
 
         public SceneName CurrentScene
         {
